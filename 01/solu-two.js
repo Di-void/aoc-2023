@@ -14,6 +14,7 @@ const lookup = {
   eight: 8,
   nine: 9,
 };
+
 const keys = Object.keys(lookup);
 for await (const line of file.readLines()) {
   let i = 0;
@@ -35,7 +36,7 @@ for await (const line of file.readLines()) {
             continue loop1;
           } else {
             last = lookup[str];
-            i = i + keys[j].length;
+            i = i + (keys[j].length - 1);
             // check whether this slice is at dead end of line
             if (str === line.slice(-str.length)) {
               break loop1;
